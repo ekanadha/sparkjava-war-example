@@ -6,6 +6,11 @@ pipeline {
     }
 
     stages {
+        stage('get code') {
+            steps {
+               git 'https://github.com/ekanadha/sparkjava-war-example.git'
+            }
+        }
         stage('Build') {
             steps {
                 sh "mvn clean package"
@@ -13,3 +18,7 @@ pipeline {
         }
     }
 }
+
+
+
+
